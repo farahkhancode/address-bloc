@@ -61,6 +61,7 @@ module.exports = class MenuController {
 
       }
 
+      
   getDate(){
     this.clear();
     var today = new Date();
