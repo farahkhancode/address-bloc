@@ -31,6 +31,7 @@ module.exports = class MenuController {
         this.getDate();
       case "Remind Me":
         this.remindMe();
+        break;
       default:
         console.log("Invalid input");
         this.main();
@@ -70,7 +71,7 @@ module.exports = class MenuController {
 
   remindMe(){
     this.clear();
-    return "Learning is a life-long pursuit";
+    console.log('Learning is a life-long pursuit');
     this.main();
   }
 
