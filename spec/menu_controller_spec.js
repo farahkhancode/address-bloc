@@ -5,6 +5,8 @@ describe("MenuController", () => {
    this.menu = new MenuController();
  });
 
+
+
   describe("#remindMe()", () => {
     it("should return a sentence", () => {
     expect(this.menu.remindMe()).toBe('Learning is a life-long pursuit');
