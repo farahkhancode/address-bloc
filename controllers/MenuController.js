@@ -10,8 +10,8 @@ module.exports = class MenuController {
        choices: [
          "Add new contact",
          "Exit",
-         "Get date",
-         "Remind Me"
+         "Remind Me",
+         "Get date"
        ]
      }
    ];
@@ -26,16 +26,18 @@ module.exports = class MenuController {
         this.addContact();
         break;
       case "Exit":
-        this.exit();
+        return this.exit();
       case "Get date":
         this.getDate();
+        break;
       case "Remind Me":
-        this.remindMe();
+        console.log(this.remindMe());
         break;
       default:
         console.log("Invalid input");
-        this.main();
+        //this.main();
     }
+    this.main();
   })
   .catch((err) => {
     console.log(err);
@@ -49,8 +51,15 @@ module.exports = class MenuController {
   addContact(){
       this.clear();
       console.log('addContact called');
-      this.main();
+      //this.main();
       }
+
+
+  remindMe(){
+     this.clear();
+     //this.main();
+     return "Learning is a life-long pursuit";
+     }
 
   getDate(){
     this.clear();
@@ -61,19 +70,13 @@ module.exports = class MenuController {
     var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
     var dateTime = date+' '+time;
     console.log(dateTime);
-    this.main();
+    //this.main();
   }
 
   exit(){
       console.log("Thanks for using AddressBloc!");
       process.exit();
       }
-
-  remindMe(){
-    this.clear();
-    console.log('Learning is a life-long pursuit');
-    this.main();
-  }
 
   getContactCount(){
          return this.contacts.length;
